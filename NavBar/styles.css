@@ -1,0 +1,189 @@
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #ff6f61, #de6262);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+            z-index: 1000;
+        }
+
+        nav.scrolled {
+            background: linear-gradient(90deg, #d94f4f, #d15353);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .menu-toggle div {
+            height: 3px;
+            background: white;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .menu-toggle.open div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+            transform: scale(1.1);
+        }
+
+        #content {
+            padding-top: 80px; /* Height of the fixed navbar */
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            background: #fff;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+            background-color: #f9f9f9;
+        }
+
+        section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        section h1:hover {
+            color: #ff6f61;
+        }
+
+        .placeholder {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            transition: transform 0.3s;
+        }
+
+        .image-placeholder {
+            height: 200px;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .image-placeholder:hover {
+            background-color: #d0d0d0;
+            transform: scale(1.1);
+        }
+
+        .text-placeholder {
+            height: 100px;
+            background: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .text-placeholder:hover {
+            background-color: #e8e8e8;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                padding: 20px 0;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: linear-gradient(90deg, #ff6f61, #de6262);
+                width: 200px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            section {
+                padding: 40px 10px;
+            }
+        }
